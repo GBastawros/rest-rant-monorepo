@@ -20,18 +20,18 @@ router.get('/', async (req, res) => {
 })
 
   
-User.init({
-    userId: {
-      type: DataTypes.SMALLINT,
-      primaryKey: true,
-      autoIncrement: true
+// User.init({
+//     userId: {
+//     //   type: DataTypes.STRING,
+//       primaryKey: true,
+//       autoIncrement: true
 
-    },
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    email: DataTypes.STRING,
-    passwordDigest: DataTypes.STRING
-},
-)  
+//     },
+//     firstName: DataTypes.STRING,
+//     lastName: DataTypes.STRING,
+//     email: DataTypes.STRING,
+//     passwordDigest: DataTypes.STRING
+// },
+// )  
 
 module.exports = router
