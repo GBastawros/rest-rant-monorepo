@@ -26,19 +26,24 @@ function NewCommentForm({ place, onSubmit }) {
     //     return <option key={author.userId} value={author.userId}>{author.firstName} {author.lastName}</option>
     // })
 
-    // function handleSubmit(e) {
-    //     e.preventDefault()
-    //     onSubmit(comment)
-    //     setComment({
-    //         content: '',
-    //         stars: 3,
-    //         rant: false,
-    //         authorId: authors[0]?.userId
-    //     })
-    // }
+    function handleSubmit(e) {
+        e.preventDefault()
+        onSubmit(comment)
+        setComment({
+            content: '',
+            stars: 3,
+            rant: false,
+            authorId: authors[0]?.userId
+        })
+    }
 
+    const { currentUser } = useContext(currentUser)
+    if(!currentUser){
+        return <p>You must be logged in to leave a rant or rave0</p>
+    }
+    
     return (
-        <form >
+        <form onSubmit={handleSubmit}>
             <div className="row">
                 <div className="form-group col-sm-12">
                     <label htmlFor="content">Content</label>

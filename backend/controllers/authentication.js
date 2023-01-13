@@ -21,12 +21,8 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.get('/profile', async (req, res) => 
+router.get('/profile', async (req, res) =>{ 
             res.json(req.currentUser)
-        }
-    } catch {
-        res.json(null)
-    }
 })
 
 
