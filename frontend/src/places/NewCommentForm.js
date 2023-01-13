@@ -22,23 +22,23 @@ function NewCommentForm({ place, onSubmit }) {
         fetchData()
     }, [])
 
-    let authorOptions = authors.map(author => {
-        return <option key={author.userId} value={author.userId}>{author.firstName} {author.lastName}</option>
-    })
+    // let authorOptions = authors.map(author => {
+    //     return <option key={author.userId} value={author.userId}>{author.firstName} {author.lastName}</option>
+    // })
 
-    function handleSubmit(e) {
-        e.preventDefault()
-        onSubmit(comment)
-        setComment({
-            content: '',
-            stars: 3,
-            rant: false,
-            authorId: authors[0]?.userId
-        })
-    }
+    // function handleSubmit(e) {
+    //     e.preventDefault()
+    //     onSubmit(comment)
+    //     setComment({
+    //         content: '',
+    //         stars: 3,
+    //         rant: false,
+    //         authorId: authors[0]?.userId
+    //     })
+    // }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form >
             <div className="row">
                 <div className="form-group col-sm-12">
                     <label htmlFor="content">Content</label>
@@ -55,9 +55,9 @@ function NewCommentForm({ place, onSubmit }) {
             <div className="row">
                 <div className="form-group col-sm-4">
                     <label htmlFor="state">Author</label>
-                    <select className="form-control" value={comment.authorId} onChange={e => setComment({ ...comment, authorId: e.target.value })}>
+                    {/* <select className="form-control" value={comment.authorId} onChange={e => setComment({ ...comment, authorId: e.target.value })}>
                         {authorOptions}
-                    </select>
+                    </select> */}
                 </div>
                 <div className="form-group col-sm-4">
                     <label htmlFor="stars">Star Rating</label>
