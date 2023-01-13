@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext} from "react"
 import { useHistory } from "react-router"
 
 function NewCommentForm({ place, onSubmit }) {
@@ -41,7 +41,7 @@ function NewCommentForm({ place, onSubmit }) {
     if(!currentUser){
         return <p>You must be logged in to leave a rant or rave0</p>
     }
-    
+
     return (
         <form onSubmit={handleSubmit}>
             <div className="row">
